@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naresh Aithagoni</title>
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Gurajada'
+      rel='stylesheet'>
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+
+  <style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+/* Back button styles*/
+  .back {
+    height: 10%;
+    /* border: 1px solid red; */
+    display: flex;
+  }
+
+  a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2%;
+  }
+
+
+
+  /* Body styles*/
+  .about-body {
+    height: 80%;
+    /* border: 1px solid goldenrod; */
+  }
+
+  #world {
+    height: 80%;
+    width: 100%;
+  }
+
+  .experience {
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 20%;
+    width: 100%;
+  }
+
+
+  .timeline-body {
+    width: 80%;
+    padding: 50px 0;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .timeline-body:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -1px;
+    width: 2px;
+    height: 90%;
+    background: #CCD1D9;
+    z-index: 1;
+  }
+
+  .timeline-block {
+    width: -webkit-calc(50% + 8px);
+    width: -moz-calc(50% + 8px);
+    width: calc(50% + 8px);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    clear: both;
+  }
+
+  .timeline-block-right {
+    float: right;
+  }
+
+  .timeline-block-left {
+    float: left;
+    direction: rtl;
+  }
+
+  .marker {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #F5F7FA;
+    background: #644cad;
+    margin-top: 10px;
+    z-index: 9999;
+  }
+
+  .timeline-content {
+    width: 95%;
+    padding: 0 15px;
+    color: #666;
+    background: #202020;
+    border-radius: 10px;
+  }
+
+  .timeline-content h3 {
+    margin: 0;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+
+  .timeline-content h4 {
+    margin: 0;
+  }
+
+  .timeline-content span {
+    color: #a4a4a4;
+    font-size: 1.1rem;
+    line-height: 1.42857;
+  }
+
+  .timeline-content p {
+    font-size: 14px;
+    line-height: 1.5em;
+    word-spacing: 1px;
+    color: #888;
+  }
+
+
+
+/* Footer styles*/
+  .foot {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10%;
+    color: #404040;
+    font-family: "Gurajada", serif;
+  }
+
+  .row1 {
+    width: 40%;
+  }
+
+  .reachme {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin-left: 1.5em;
+  }
+
+  .row2 {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .copy {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+  }
+
+  .socialicons {
+    width: 50%;
+  }
+
+  ul {
+    margin-top: 0;
+    margin-right: 20px;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    list-style: none;
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a.sociali {
+    text-decoration: none;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+
+  .fa {
+    font-size: 22px;
+  }
+
+  .fa-github {
+    color: #24292e;
+  }
+
+  .fa-github:hover {
+    color: #c6cbd1;
+  }
+
+  .fa-linkedin {
+    color: #344150;
+  }
+
+  .fa-linkedin:hover {
+    color: #0077b5;
+  }
+
+  .fa-instagram {
+    color: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  }
+
+  .fa-instagram:hover {
+    color: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  }
+
+  .fa-facebook {
+    color: #344150;
+  }
+
+  .fa-facebook:hover {
+    color: #3b5998;
+  }
+
+  .fa-twitter {
+    color: #344150;
+  }
+
+  .fa-twitter:hover {
+    color: #1da1f2;
+  }
+
+
+  /*
+    -----------------------------
+    ----- 12. Media Queries -----
+    -----------------------------
+*/
+
+  @media screen and (max-width : 768px) {
+
+    .foot {
+      display: flex;
+      flex-direction: column;
+      height: 17%;
+    }
+
+    .row1 {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .row2 {
+      width: 100%;
+    }
+
+    #world {
+      touch-action: none;
+      width: 100%;
+    }
+
+    .timeline-body:before {
+        left: 8px;
+        width: 2px;
+    }
+    .timeline-block {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .timeline-block-right {
+        float: none;
+    }
+
+    .timeline-block-left {
+        float: none;
+        direction: ltr;
+    }
+  }
+
+  /* Extra Small Devices */
+  @media screen and (max-width : 480px) {
+    .experience {
+      bottom: -3%;
+    }
+
+    .timeline-body:before {
+      height: 80%;
+    }
+  }
+
+  /* Collapse timeline */
+  @media only screen and (max-width: 750px) {
+    .experience {
+      bottom: 8%;
+    }
+
+    .timeline-body:before {
+      height: 90%;
+    }
+  }
+
+  </style>
+  <body>
+
+    <div class="container">
+      <div class="back">
+        <a href="index.html" class="glow"><i class="fa fa-long-arrow-left"></i></a>
+      </div>
+      <div class="about-body">
+        <canvas id='world'></canvas>
+        <div class="experience">
+          <div class="timeline-body">
+            <div class="timeline-block timeline-block-right">
+              <div class="marker"></div>
+              <div class="timeline-content">
+                  <h3>Full Stack Developer</h3>
+                  <h4>HMS GmbH, Germany</h4>
+                  <span>Jul 2018 – Present</span>
+              </div>
+            </div>
+        
+            <div class="timeline-block timeline-block-left">
+              <div class="marker"></div>
+              <div class="timeline-content">
+                  <h3>Master Thesis</h3>
+                  <h4>Fachhochschule Kiel</h4>
+                  <span>Jul 2017 – Jan 2018</span>
+                  <p>To establish an online, 60 minute, 75 Question Placement Test for the
+                    purposes of placing students per semester into the appropriate German
+                    class based on their level (A1-C1), and included multi-choice, image
+                    style, and fill in the blank questions
+                    - Answers will be automatically graded at the completion of the test and
+                    the results of the test will be used in order to automatically place students
+                    into the appropriate German class based on their results (A1-C1).</p>
+              </div>
+            </div>
+        </div>
+        </div>
+      </div>
+      <div class="foot">
+        <div class="row1">
+          <div class="reachme">
+            reach Me @: anaresh7777@gmail.com
+          </div>
+        </div>
+        <div class="row2">
+          <div class="copy">
+            &copy;nareshaithagoni <script>document.write(new Date().getFullYear())</script>
+          </div>
+          <div class="socialicons">
+            <ul>
+              <li>
+                <a class="sociali github" href="https://github.com/naithagoni/"
+                  target="_blank"><i
+                    class="fa fa-github" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a class="sociali linkedin"
+                  href="https://www.linkedin.com/in/naresh-aithagoni-a6478813a/"
+                  target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a class="sociali instagram"
+                  href="https://www.instagram.com/anaresh911/"
+                  target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a class="sociali facebook"
+                  href="https://www.facebook.com/profile.php?id=100006318071921"
+                  target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+              </li>
+              <li>
+                <a class="sociali twitter" href="https://twitter.com/anaresh911"
+                  target="_blank"><i
+                    class="fa fa-twitter" aria-hidden="true"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      var SCREEN_WIDTH = window.innerWidth;
+      var SCREEN_HEIGHT = window.innerHeight;
+
+      var RADIUS = 70;
+
+      var RADIUS_SCALE = 1;
+      var RADIUS_SCALE_MIN = 1;
+      var RADIUS_SCALE_MAX = 1.5;
+
+      var QUANTITY = 25;
+
+      var canvas;
+      var context;
+      var particles;
+
+      var mouseX = SCREEN_WIDTH * 0.5;
+      var mouseY = SCREEN_HEIGHT * 0.5;
+      var mouseIsDown = false;
+
+      function init() {
+
+        canvas = document.getElementById( 'world' );
+        
+        if (canvas && canvas.getContext) {
+          context = canvas.getContext('2d');
+          
+          // Register event listeners
+          window.addEventListener('mousemove', documentMouseMoveHandler, false);
+          window.addEventListener('mousedown', documentMouseDownHandler, false);
+          window.addEventListener('mouseup', documentMouseUpHandler, false);
+          document.addEventListener('touchstart', documentTouchStartHandler, false);
+          document.addEventListener('touchmove', documentTouchMoveHandler, false);
+          window.addEventListener('resize', windowResizeHandler, false);
+          
+          createParticles();
+          
+          windowResizeHandler();
+          
+          setInterval( loop, 1000 / 60 );
+        }
+      }
+
+      function createParticles() {
+        particles = [];
+        
+        for (var i = 0; i < QUANTITY; i++) {
+          var particle = {
+            size: 1,
+            position: { x: mouseX, y: mouseY },
+            offset: { x: 0, y: 0 },
+            shift: { x: mouseX, y: mouseY },
+            speed: 0.01+Math.random()*0.04,
+            targetSize: 1,
+            fillColor: '#' + (Math.random() * 0x404040 + 0xaaaaaa | 0).toString(16),
+            orbit: RADIUS*.5 + (RADIUS * .5 * Math.random())
+          };
+          
+          particles.push( particle );
+        }
+      }
+
+      function documentMouseMoveHandler(event) {
+        mouseX = event.clientX - (window.innerWidth - SCREEN_WIDTH) * .5;
+        mouseY = event.clientY - (window.innerHeight - SCREEN_HEIGHT) * .5;
+      }
+
+      function documentMouseDownHandler(event) {
+        mouseIsDown = true;
+      }
+
+      function documentMouseUpHandler(event) {
+        mouseIsDown = false;
+      }
+
+      function documentTouchStartHandler(event) {
+        if(event.touches.length == 1) {
+          event.preventDefault();
+
+          mouseX = event.touches[0].pageX - (window.innerWidth - SCREEN_WIDTH) * .5;;
+          mouseY = event.touches[0].pageY - (window.innerHeight - SCREEN_HEIGHT) * .5;
+        }
+      }
+
+      function documentTouchMoveHandler(event) {
+        if(event.touches.length == 1) {
+          event.preventDefault();
+
+          mouseX = event.touches[0].pageX - (window.innerWidth - SCREEN_WIDTH) * .5;;
+          mouseY = event.touches[0].pageY - (window.innerHeight - SCREEN_HEIGHT) * .5;
+        }
+      }
+
+      function windowResizeHandler() {
+        SCREEN_WIDTH = window.innerWidth;
+        SCREEN_HEIGHT = window.innerHeight;
+        
+        canvas.width = SCREEN_WIDTH;
+        canvas.height = SCREEN_HEIGHT;
+      }
+
+      function loop() {
+        
+        if( mouseIsDown ) {
+          RADIUS_SCALE += ( RADIUS_SCALE_MAX - RADIUS_SCALE ) * (0.02);
+        }
+        else {
+          RADIUS_SCALE -= ( RADIUS_SCALE - RADIUS_SCALE_MIN ) * (0.02);
+        }
+        
+        RADIUS_SCALE = Math.min( RADIUS_SCALE, RADIUS_SCALE_MAX );
+        
+        context.fillStyle = 'rgba(0,0,0,0.05)';
+          context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+        
+        for (i = 0, len = particles.length; i < len; i++) {
+          var particle = particles[i];
+          
+          var lp = { x: particle.position.x, y: particle.position.y };
+          
+          // Rotation
+          particle.offset.x += particle.speed;
+          particle.offset.y += particle.speed;
+          
+          // Follow mouse with some lag
+          particle.shift.x += ( mouseX - particle.shift.x) * (particle.speed);
+          particle.shift.y += ( mouseY - particle.shift.y) * (particle.speed);
+          
+          // Apply position
+          particle.position.x = particle.shift.x + Math.cos(i + particle.offset.x) * (particle.orbit*RADIUS_SCALE);
+          particle.position.y = particle.shift.y + Math.sin(i + particle.offset.y) * (particle.orbit*RADIUS_SCALE);
+          
+          // Limit to screen bounds
+          particle.position.x = Math.max( Math.min( particle.position.x, SCREEN_WIDTH ), 0 );
+          particle.position.y = Math.max( Math.min( particle.position.y, SCREEN_HEIGHT ), 0 );
+          
+          particle.size += ( particle.targetSize - particle.size ) * 0.05;
+          
+          if( Math.round( particle.size ) == Math.round( particle.targetSize ) ) {
+            particle.targetSize = 1 + Math.random() * 7;
+          }
+          
+          context.beginPath();
+          context.fillStyle = particle.fillColor;
+          context.strokeStyle = particle.fillColor;
+          context.lineWidth = particle.size;
+          context.moveTo(lp.x, lp.y);
+          context.lineTo(particle.position.x, particle.position.y);
+          context.stroke();
+          context.arc(particle.position.x, particle.position.y, particle.size/2, 0, Math.PI*2, true);
+          context.fill();
+        }
+      }
+
+      window.onload = init;
+      
+    </script>
+  </body>
+</html>
