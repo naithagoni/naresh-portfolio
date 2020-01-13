@@ -53,8 +53,10 @@
     display: flex;
     justify-content: center;
     position: absolute;
-    bottom: 20%;
+    height: 80%;
     width: 100%;
+    margin-top: 10%;
+    /* border: 1px solid red */
   }
 
 
@@ -284,25 +286,34 @@
     }
 
     .timeline-body:before {
-        left: 8px;
-        width: 2px;
+      left: 8px;
+      width: 2px;
     }
     .timeline-block {
-        width: 100%;
-        margin-bottom: 30px;
+      width: 100%;
+      margin-bottom: 30px;
     }
     .timeline-block-right {
-        float: none;
+      float: none;
     }
 
     .timeline-block-left {
-        float: none;
-        direction: ltr;
+      float: none;
+      direction: ltr;
+    }
+
+    .experience {
+      height: 71%;
+      margin-top: 17%;
+    }
+
+    .timeline-body:before {
+      height: 90%;
     }
   }
 
   /* Extra Small Devices */
-  @media screen and (max-width : 480px) {
+  /* @media screen and (max-width : 480px) {
     .experience {
       bottom: -3%;
     }
@@ -310,10 +321,10 @@
     .timeline-body:before {
       height: 80%;
     }
-  }
+  } */
 
   /* Collapse timeline */
-  @media only screen and (max-width: 750px) {
+  /* @media only screen and (max-width: 750px) {
     .experience {
       bottom: 3%;
     }
@@ -321,7 +332,7 @@
     .timeline-body:before {
       height: 90%;
     }
-  }
+  } */
 
   </style>
   <body>
@@ -332,34 +343,34 @@
       </div>
       <div class="about-body">
         <canvas id='world'></canvas>
-        <div class="experience">
-          <div class="timeline-body">
-            <div class="timeline-block timeline-block-right">
-              <div class="marker"></div>
-              <div class="timeline-content">
-                  <h3>Full Stack Developer</h3>
-                  <h4>HMS GmbH, Germany</h4>
-                  <span>Jul 2018 – Present</span>
-              </div>
+      </div>
+      <div class="experience">
+        <div class="timeline-body">
+          <div class="timeline-block timeline-block-right">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>Full Stack Developer</h3>
+                <h4>HMS GmbH, Germany</h4>
+                <span>Jul 2018 – Present</span>
             </div>
-        
-            <div class="timeline-block timeline-block-left">
-              <div class="marker"></div>
-              <div class="timeline-content">
-                  <h3>Master Thesis</h3>
-                  <h4>Fachhochschule Kiel</h4>
-                  <span>Jul 2017 – Jan 2018</span>
-                  <p>To establish an online, 60 minute, 75 Question Placement Test for the
-                    purposes of placing students per semester into the appropriate German
-                    class based on their level (A1-C1), and included multi-choice, image
-                    style, and fill in the blank questions
-                    - Answers will be automatically graded at the completion of the test and
-                    the results of the test will be used in order to automatically place students
-                    into the appropriate German class based on their results (A1-C1).</p>
-              </div>
+          </div>
+      
+          <div class="timeline-block timeline-block-left">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>Master Thesis</h3>
+                <h4>Fachhochschule Kiel</h4>
+                <span>Jul 2017 – Jan 2018</span>
+                <p>To establish an online, 60 minute, 75 Question Placement Test for the
+                  purposes of placing students per semester into the appropriate German
+                  class based on their level (A1-C1), and included multi-choice, image
+                  style, and fill in the blank questions
+                  - Answers will be automatically graded at the completion of the test and
+                  the results of the test will be used in order to automatically place students
+                  into the appropriate German class based on their results (A1-C1).</p>
             </div>
-        </div>
-        </div>
+          </div>
+      </div>
       </div>
       <div class="foot">
         <div class="row1">
