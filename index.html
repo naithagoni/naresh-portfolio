@@ -54,7 +54,10 @@
       <div id="footer">
         <div class="footer1">
           <div class="reachme">
-            reach Me @: anaresh7777@gmail.com
+            <span class="text-wrapper">
+              <span class="letters">reach Me @: anaresh7777@gmail.com</span>
+              <span class="line"></span>
+            </span>
           </div>
         </div>
         <div class="footer2">
@@ -97,6 +100,8 @@
 
     <script
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script>
 
       $(document).ready(() => {
@@ -119,14 +124,42 @@
             });
           });
 
-          setTimeout(() => {
-            $(".reachme").fadeIn()
-            .css({marginLeft:1000})
-            .animate({marginLeft:'1.5em'}, 1500, function() {
-            });
-          });
+          // setTimeout(() => {
+          //   $(".reachme").fadeIn()
+          //   .css({marginLeft:1000})
+          //   .animate({marginLeft:'1.5em'}, 1500, function() {
+          //   });
+          // });
       });
-      
+
+      // Wrap every letter in a span
+      var textWrapper = document.querySelector('.reachme .letters');
+      textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+      anime.timeline({loop: true})
+        .add({
+          targets: '.reachme .line',
+          scaleX: [0,1],
+          opacity: [0.5,1],
+          easing: "easeInOutExpo",
+          duration: 1600
+        }).add({
+          targets: '.reachme .letter',
+          opacity: [0,1],
+          translateX: [40,0],
+          translateZ: 0,
+          scaleX: [0.3, 1],
+          easing: "easeOutExpo",
+          duration: 1500,
+          offset: '-=600',
+          delay: (el, i) => 500 + 25 * i
+        }).add({
+          targets: '.reachme',
+          opacity: 0,
+          duration: 2000,
+          easing: "easeOutExpo",
+          delay: 2000
+        });
   </script>
     <script src="js/scripts.min.js"></script>
   </body>
