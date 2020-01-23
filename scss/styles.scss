@@ -252,7 +252,7 @@ body {
 
     .first {
       background-color: #1F1B24;
-      border-radius: 10px;
+      border-bottom-right-radius: 10px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -272,7 +272,7 @@ body {
         .hms-company-name {}
 
         .hms-working-date-palce {
-          color: #39375b;
+          color: #64638f;
 
           .hms-working-date-range {}
 
@@ -291,7 +291,7 @@ body {
 
     .fourth {
       background-color: #121212;
-      border-radius: 10px;
+      border-top-left-radius: 10px;
       display: flex;
       justify-content: center;
       align-items: center;
