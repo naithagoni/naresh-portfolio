@@ -10,36 +10,44 @@
   </head>
 
   <body>
-    <header class="header">
-      <div class="logo-box">
-        <div class="logo">
-          <span class="firstname">N</span>
-          <span class="firstname">a</span>
-          <span class="firstname">r</span>
-          <span class="firstname">e</span>
-          <span class="firstname name-animation">s</span>
-          <span class="firstname name-animation">h</span>
-          <span class="lastname">A</span>
-          <span class="lastname">i</span>
-          <span class="lastname">t</span>
-          <span class="lastname">h</span>
-          <span class="lastname">a</span>
-          <span class="lastname">g</span>
-          <span class="lastname">o</span>
-          <span class="lastname">n</span>
-          <span class="lastname">i</span>
+    <header class="link-header">
+      <a class="left-arrow" href="index.html">
+        <svg width="100" height="50" preserveAspectRatio="none" viewBox="-1 -1 102 52">
+          <defs>
+            <linearGradient id="grad">
+              <stop offset="97%" stop-color="#000" />
+              <stop offset="97%" stop-color="#BB86FC" />
+            </linearGradient>
+          </defs>
+          <path d="M0,5 a5,5 0 0,1 5,-5 h95 v45 l-10,-10 h-85 a5,5 0 0,1 -5,-5" fill="url(#grad)" />
+          <text x="50%" y="40%" text-anchor="middle" font-size="14" stroke="#fff" style="letter-spacing: 4px;">HOME</text>
+        </svg>
+      </a>
+    </header>
+    <div class="about-me">
+      <div class="about-me-header">
+        <h1 class="developer-heading">
+          <span class="developer-heading-main">
+            Looking for a Full-stack developer?
+          </span>
+          <span class="developer-heading-sub">
+            I'm a Full-stack developer living in Halle (Saale), Germany.
+          </span>
+        </h1>
+      </div>
+      <div class="about-me-body">
+        <div class="about-me-logo">
+
         </div>
-        <div class="nav-links">
-          <span class="glow-on-hover"><a href="about.html">About</a></span>
-          <span class="glow-on-hover">+<a href="experience.html">Experience</a></span>
+        <div class="about-me-text">
+          <span>
+            I'm a Berlin based Full Stack developer and DevOps enthusiast.&nbsp;
+            I have a diverse range of skills, ranging from HTML + CSS + JavaScript, all the way to Angular, NodeJS, and DevOps with over 2 years of experience.&nbsp;
+            My focuses on writing clean, efficient, and maintainable code.
+          </span>
         </div>
       </div>
-      <h1 class="heading-primary">
-        <span class="heading-primary-main">Full-Stack developer</span>
-        <span class="heading-primary-sub">Build's websites that sells</span>
-      </h1>
-    </header>
-
+    </div>
     <footer id="footer">
       <div class="contact-me">
         <span class="line animated bounce">reach Me @: <span style="letter-spacing: 2px;">&nbsp;anaresh7777@gmail.com</span></span>
@@ -83,20 +91,5 @@
     <script
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>
-    <script>
-    $(document).ready(() => {
-      setTimeout(() => {
-        var firstnameLength = $(".firstname").length;
-        $($(".firstname").get()).each((i, e) => {
-          $(e).delay(500 * (i - 1)).fadeIn(500);
-          if(i >= firstnameLength - 1) {
-            $(e).animate({
-              "margin-right": "25px"
-            });
-          }
-        });
-      }, 1000);
-    });
-    </script>
   </body>
 </html>
